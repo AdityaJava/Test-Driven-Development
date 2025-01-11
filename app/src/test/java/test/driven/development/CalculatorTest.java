@@ -14,7 +14,7 @@ public class CalculatorTest {
     @Test
     public void testAddForSingleNumber(){
         Calculator calculator = new Calculator();
-        Assert.assertEquals(0, calculator.add("1"));
+        Assert.assertEquals(1, calculator.add("1"));
     }
 
 }
