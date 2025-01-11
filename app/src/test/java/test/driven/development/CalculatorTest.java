@@ -38,6 +38,11 @@ public class CalculatorTest {
     @Test
     public void testAddForNegativeNumbers() {
         Calculator calculator = new Calculator();
-        Assert.assertEquals("negative numbers not allowed -1", calculator.add("-1"));
+        Exception exception = Assert.assertThrows(
+                IllegalArgumentException.class, () -> {
+                    calculator.add("-1");
+                }
+        );
+        Assert.assertEquals("negative numbers not allowed -1", exception.getMessage());
     }
 }

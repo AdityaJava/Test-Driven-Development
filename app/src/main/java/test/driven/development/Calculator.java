@@ -14,6 +14,9 @@ public class Calculator {
         if (numbers.startsWith("//")) {
             numbers = getStringFromCustomDelimiter(numbers);
         }
+        if (Integer.parseInt(numbers) < 0) {
+            throw new IllegalArgumentException("negative numbers not allowed " + numbers);
+        }
         List<String> numberListString = Arrays.asList(numbers.replace("\n", ",").split(","));
         int sum = 0;
         for (String numberString : numberListString) {
