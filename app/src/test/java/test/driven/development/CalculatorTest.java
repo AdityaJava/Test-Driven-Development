@@ -17,4 +17,11 @@ public class CalculatorTest {
         Assert.assertEquals(1, calculator.add("1"));
     }
 
+    @Test
+    public void testAddForTwoNumber(){
+        Calculator calculator = new Calculator();
+        Assert.assertEquals(6, calculator.add("1,5"));
+    }
+
+
 }
