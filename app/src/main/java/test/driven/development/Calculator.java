@@ -14,8 +14,12 @@ public class Calculator {
         if (numbers.startsWith("//")) {
             numbers = getStringFromCustomDelimiter(numbers);
         }
-        if (Integer.parseInt(numbers) < 0) {
-            throw new IllegalArgumentException("negative numbers not allowed " + numbers);
+        try {
+            if (Integer.parseInt(numbers) < 0) {
+                throw new IllegalArgumentException("negative numbers not allowed " + numbers);
+            }
+        } catch (NumberFormatException numberFormatException) {
+            //do nothing
         }
         List<String> numberListString = Arrays.asList(numbers.replace("\n", ",").split(","));
         int sum = 0;
