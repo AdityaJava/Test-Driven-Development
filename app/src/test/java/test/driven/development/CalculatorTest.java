@@ -23,5 +23,12 @@ public class CalculatorTest {
         Assert.assertEquals(6, calculator.add("1,5"));
     }
 
+    @Test
+    public void testAddForNumbersLineAndCommaSeparated(){
+        Calculator calculator = new Calculator();
+        Assert.assertEquals(6, calculator.add("1\n2,3"));
+    }
+
+
 
 }
