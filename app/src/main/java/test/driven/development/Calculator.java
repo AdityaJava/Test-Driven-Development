@@ -12,7 +12,7 @@ public class Calculator {
         if (numbers.length() == 1) {
             return Integer.parseInt(numbers);
         }
-        List<String> numberListString = Arrays.asList(numbers.split(","));
+        List<String> numberListString = Arrays.asList(numbers.replace("\n", ",").split(","));
         int sum = 0;
         for (String numberString : numberListString) {
             sum += Integer.parseInt(numberString);
